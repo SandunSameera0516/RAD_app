@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="490.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafx_rad.DashboardController">
+   <children>
+      <TabPane prefHeight="490.0" prefWidth="780.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="INFECTIOUS WASTE">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="492.0" prefWidth="780.0">
+                     <children>
+                        <Pane prefHeight="432.0" prefWidth="244.0">
+                           <children>
+                              <Label alignment="CENTER" layoutX="4.0" layoutY="4.0" prefHeight="20.0" prefWidth="240.0" text="Infectious Waste Details" textFill="RED">
+                                 <font>
+                                    <Font name="Arial Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="idTextField1" layoutX="30.0" layoutY="48.0" prefHeight="25.0" prefWidth="193.0" promptText="Id" />
+                              <TextField fx:id="containerTextField1" layoutX="28.0" layoutY="180.0" prefHeight="25.0" prefWidth="193.0" promptText="Tyep of Container" />
+                              <TextField fx:id="twasteTextField1" layoutX="30.0" layoutY="231.0" prefHeight="25.0" prefWidth="193.0" promptText="Total Waste Per Day" />
+                              <Button fx:id="insertData1" alignment="CENTER" layoutX="60.0" layoutY="276.0" mnemonicParsing="false" onAction="#insertData" prefHeight="35.0" prefWidth="122.0" style="-fx-background-color: gray;" text="INSERT DATA" textFill="WHITE" />
+                              <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="23.0" layoutY="335.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../../../image/icons8-medical-doctor-40.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="107.0" layoutY="335.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../../../image/icons8-medical-heart-48.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="192.0" layoutY="335.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../../../image/icons8-dustbin-64.png" />
+                                 </image>
+                              </ImageView>
+                              <Button fx:id="print" alignment="CENTER" layoutX="14.0" layoutY="387.0" mnemonicParsing="false" onAction="#PrintPDF" prefHeight="31.0" prefWidth="55.0" text="File">
+                                 <font>
+                                    <Font name="Arial" size="12.0" />
+                                 </font>
+                              </Button>
+                              <TextField fx:id="wasteTextfield1" layoutX="28.0" layoutY="94.0" prefHeight="26.0" prefWidth="196.0" promptText="Type of Waste" />
+                              <TextField fx:id="objectTextfield1" layoutX="24.0" layoutY="136.0" prefHeight="26.0" prefWidth="196.0" promptText="Waste Object" />
+                           </children>
+                        </Pane>
+                        <TableView fx:id="infectiousTableView1" layoutX="242.0" prefHeight="360.0" prefWidth="538.0">
+                          <columns>
+                            <TableColumn fx:id="id1" prefWidth="71.0" text="ID" />
+                            <TableColumn fx:id="tw1" prefWidth="113.0" text="Type of Waste" />
+                              <TableColumn fx:id="ob1" prefWidth="111.0" text="Object" />
+                              <TableColumn fx:id="tc1" prefWidth="117.0" text="Type of Container" />
+                              <TableColumn fx:id="wd1" prefWidth="125.0" text="Waste / Day" />
+                          </columns>
+                        </TableView>
+                        <Button fx:id="delete1" alignment="CENTER" layoutX="473.0" layoutY="382.0" mnemonicParsing="false" onAction="#deleteData" prefHeight="35.0" prefWidth="76.0" style="-fx-background-color: gray;" text="Delete" textFill="WHITE" />
+                        <Button fx:id="update1" alignment="CENTER" layoutX="320.0" layoutY="381.0" mnemonicParsing="false" onAction="#updateData" prefHeight="37.0" prefWidth="76.0" style="-fx-background-color: gray;" text="Update" textFill="WHITE" />
+                        <Button fx:id="sum1" alignment="CENTER" layoutX="632.0" layoutY="382.0" mnemonicParsing="false" onAction="#sumColumn" prefHeight="39.0" prefWidth="124.0" style="-fx-background-color: gray;" text="Total Waste /  Day" textFill="WHITE" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="NON INFECTIOUS WASTE">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Pane layoutX="530.0" layoutY="-2.0" prefHeight="436.0" prefWidth="250.0">
+                           <children>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="22.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../../../image/icons8-medical-doctor-40.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="108.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../../../image/icons8-medical-heart-48.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="195.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../../../image/icons8-dustbin-64.png" />
+                                 </image>
+                              </ImageView>
+                              <TextField fx:id="idTextField2" layoutX="21.0" layoutY="66.0" prefHeight="25.0" prefWidth="205.0" promptText="Id" />
+                              <TextField fx:id="containerTextField2" layoutX="21.0" layoutY="186.0" prefHeight="25.0" prefWidth="205.0" promptText="Type of Container" />
+                              <TextField fx:id="twasteTextField2" layoutX="21.0" layoutY="233.0" prefHeight="25.0" prefWidth="205.0" promptText="Total Waste Per Day" />
+                              <Button fx:id="insertData2" alignment="CENTER" layoutX="87.0" layoutY="272.0" mnemonicParsing="false" onAction="#insertDatas" prefHeight="38.0" prefWidth="79.0" style="-fx-background-color: green;" text="Insert Data">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="update2" alignment="CENTER" layoutX="22.0" layoutY="324.0" mnemonicParsing="false" onAction="#updateDatas" prefHeight="33.0" prefWidth="79.0" style="-fx-background-color: green;" text="Update">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="sum2" alignment="CENTER" layoutX="92.0" layoutY="370.0" mnemonicParsing="false" onAction="#sumColumn1" prefHeight="31.0" prefWidth="73.0" style="-fx-background-color: green;" text="Sum">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="delete2" alignment="CENTER" layoutX="149.0" layoutY="324.0" mnemonicParsing="false" onAction="#deleteDatas" prefHeight="35.0" prefWidth="76.0" style="-fx-background-color: green;" text="Delete">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Button>
+                              <TextField fx:id="wasteTextfield2" layoutX="18.0" layoutY="109.0" prefHeight="26.0" prefWidth="206.0" promptText="Type of Waste" />
+                              <TextField fx:id="objectTextfield2" layoutX="18.0" layoutY="153.0" prefHeight="26.0" prefWidth="206.0" promptText="Waste Object" />
+                           </children>
+                        </Pane>
+                        <Pane layoutX="-1.0" prefHeight="62.0" prefWidth="532.0">
+                           <children>
+                              <Button alignment="CENTER" layoutX="14.0" layoutY="10.0" mnemonicParsing="false" onAction="#PrintFile" prefHeight="37.0" prefWidth="58.0" text="File" />
+                              <Label alignment="CENTER" layoutX="118.0" layoutY="14.0" prefHeight="17.0" prefWidth="280.0" text="Non Infectious  Waste Details " textFill="RED">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                        <TableView fx:id="nonInfectiousTableView" layoutY="60.0" prefHeight="372.0" prefWidth="530.0">
+                          <columns>
+                            <TableColumn fx:id="id2" prefWidth="61.0" text="ID" />
+                            <TableColumn fx:id="tw2" prefWidth="111.0" text="Type of Waste" />
+                              <TableColumn fx:id="ob2" prefWidth="103.0" text="Object" />
+                              <TableColumn fx:id="tc2" prefWidth="117.0" text="Type of Container" />
+                              <TableColumn fx:id="wd2" prefWidth="137.0" text="Waste / Day" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="PI CHART (Waste Amount)">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <PieChart fx:id="pieChart1" layoutX="122.0" layoutY="16.0" title="Pie Chart (Amount of Waste)" />
+                     </children></AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="INFECTIOUS (Object Type)">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <PieChart fx:id="pieChart" layoutX="134.0" layoutY="54.0" prefHeight="352.0" prefWidth="488.0" />
+                        <Label layoutX="275.0" layoutY="20.0" text="Infectious Waste (Object Type)" textFill="RED">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children></AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="INFECTIOUS (Waste Type)">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="337.0" prefWidth="682.0">
+                     <children>
+                        <LineChart fx:id="LineChart" layoutX="133.0" layoutY="16.0" title="Line Chart (Infectious Waste)">
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" fx:id="x" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis fx:id="y" side="LEFT" />
+                          </yAxis>
+                        </LineChart>
+                     </children></AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <Accordion />
+   </children>
+</AnchorPane>
