@@ -31,4 +31,5 @@ public class InfectiousWaste {
         return total_waste_per_day;
     }
 
-}
+} 
+     
